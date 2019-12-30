@@ -22,3 +22,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 compose_docker-*.tar
 
+# Ignore the compiled app
+./compose_docker
