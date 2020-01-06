@@ -23,4 +23,7 @@ erl_crash.dump
 compose_docker-*.tar
 
 # Ignore the compiled app
-./compose_docker
+/compose_docker
+
+# Ignore ElixirLS stuff
+/.elixir_ls
