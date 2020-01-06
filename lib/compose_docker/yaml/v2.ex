@@ -25,6 +25,8 @@ defmodule ComposeDocker.Yaml.V2 do
            "restart" => restart
          }}
       ) do
+    volumes = replace_relative_paths(volumes)
+
     %__MODULE__{
       name: name,
       image: image,
@@ -48,5 +50,11 @@ defmodule ComposeDocker.Yaml.V2 do
     ]
     |> List.flatten()
     |> Enum.join(" ")
+  end
+
+  defp replace_relative_paths(volumes) do
+    Enum.map(volumes, fn volume ->
+      String.replace(volume, ~r{^.}, "$(pwd)")
+    end)
   end
 end

@@ -17,8 +17,8 @@ defmodule ComposeDocker.Yaml.V2Test do
     assert command =~ ~r/-e PUID=1000/
     assert command =~ ~r/-e PGID=1000/
 
-    assert command =~ ~r{-v ./data:/config}
-    assert command =~ ~r{-v ./certs:/home/certs}
+    assert command =~ ~r{-v \$\(pwd\)/data:/config}
+    assert command =~ ~r{-v \$\(pwd\)/certs:/home/certs}
 
     assert command =~ ~r/-p 8080:8080/
     assert command =~ ~r/-p 8443:8443/
