@@ -18,7 +18,7 @@ mix do deps.get, escript.build
 
 ## Why?
 
-Installing docker-compose and all its python devs brought my Raspberry Pi Zero to a crawl.
+Installing docker-compose and all its python deps brought my Raspberry Pi Zero to a crawl.
 
 ## License
 
